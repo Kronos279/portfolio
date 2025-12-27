@@ -353,7 +353,7 @@
                             <i class="fa-solid fa-greater-than"></i> Accenture Data Analytics
                     </a>
 
-                    <a target="_blank" class="skill-tag" style="padding: 10px 20px; text-decoration: none; cursor: pointer;">
+                    <a href="#" target="_blank" class="skill-tag" style="padding: 10px 20px; text-decoration: none; cursor: pointer;">
                         <i class="fab fa-java"></i> Java Masterclass
                     </a>
 
@@ -418,13 +418,15 @@
 
     <div id="galleryModal" class="gallery-modal">
         <span class="gallery-close" onclick="closeGallery()">&times;</span>
+
+        <a class="gallery-prev" onclick="changeImage(-1)">&#10094;</a>
+        <a class="gallery-next" onclick="changeImage(1)">&#10095;</a>
+
         <div class="gallery-content-wrapper">
-            <a class="gallery-prev" onclick="changeImage(-1)">&#10094;</a>
             <img class="gallery-main-img" id="galleryMainImg" src="">
-            <a class="gallery-next" onclick="changeImage(1)">&#10095;</a>
         </div>
-        <div class="gallery-thumbnails" id="galleryThumbnails">
-            </div>
+        
+        <div class="gallery-thumbnails" id="galleryThumbnails"></div>
     </div>
 
     <script src="script.js"></script>

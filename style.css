@@ -115,8 +115,7 @@ ul { list-style: none; }
 
 .btn-outline:hover {
     border-color: var(--accent-gold);
-    color: #000;
-
+    color: var(--accent-gold);
 }
 
 /* --- Glassmorphism Nav --- */
@@ -351,6 +350,15 @@ nav {
     opacity: 1; transition: var(--transition);
 }
 
+/* Specific override for the black TCET logo */
+.theme-logo[src*="TCET.png"] {
+    filter: invert(100%) sepia(100%) saturate(600%) hue-rotate(5deg) brightness(150%) contrast(100%);
+}
+
+/* Specific fix for the Black UCD Logo */
+.theme-logo[src*="UCD"] {
+    filter: invert(100%) sepia(100%) saturate(600%) hue-rotate(5deg) brightness(150%) contrast(100%);
+}
 
 /* --- Experience --- */
 .timeline {
@@ -505,16 +513,32 @@ nav {
 }
 @keyframes zoomIn { from {transform: scale(0.9); opacity: 0;} to {transform: scale(1); opacity: 1;} }
 
+/* --- Updated Gallery Arrows (Fixed to screen) --- */
 .gallery-prev, .gallery-next {
-    cursor: pointer; position: absolute; top: 50%;
-    width: auto; padding: 16px; margin-top: -50px;
-    color: var(--accent-gold); font-weight: bold; font-size: 3rem;
-    transition: 0.3s ease; border-radius: 0 3px 3px 0;
-    user-select: none; background: rgba(0,0,0,0.3);
+    cursor: pointer; 
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%); /* Vertically centered */
+    width: auto; 
+    padding: 10px 18px; 
+    color: var(--accent-gold); 
+    font-weight: bold; 
+    font-size: 2rem; /* Reduced from 3rem */
+    transition: 0.3s ease; 
+    user-select: none; 
+    background: rgba(0,0,0,0.5); /* Semi-transparent bg */
+    border-radius: 4px;
+    z-index: 2005; /* High z-index to stay on top */
 }
-.gallery-next { right: 0; border-radius: 3px 0 0 3px; }
-.gallery-prev { left: 0; border-radius: 3px 0 0 3px; }
-.gallery-prev:hover, .gallery-next:hover { background-color: var(--accent-gold); color: #000; }
+
+/* Fixed to screen edges */
+.gallery-prev { left: 20px; } 
+.gallery-next { right: 20px; }
+
+.gallery-prev:hover, .gallery-next:hover { 
+    background-color: var(--accent-gold); 
+    color: #000; 
+}
 
 .gallery-thumbnails {
     display: flex; gap: 10px; margin-top: 20px;
