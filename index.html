@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Yadav | Software Engineer & Quantitative Developer</title>
+    <meta name="description" content="Portfolio of Ashutosh Yadav, a Software Engineer and Quantitative Developer specializing in Distributed Systems, Java, and Financial Modeling.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    Ashutosh<span>.</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about" onclick="closeMenu()">About</a></li>
+                    <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+                    <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                    <li><a href="#education" onclick="closeMenu()">Education</a></li>
+                    <li><a href="#publications" onclick="closeMenu()">Research</a></li>
+                    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content reveal">
+                    <span class="typewriter">> <span id="typewriter-text"></span></span>
+                    <h1>Ashutosh Yadav</h1>
+                    <p>
+                        Software Engineer & Quantitative Developer building scalable distributed systems and data-driven financial solutions.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn">View Projects</a>
+                        <a href="assets/cv/Ashutosh_Yadav_resume.pdf" class="btn btn-outline" download>Download CV</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper reveal">
+                    <img src="assets/images/profilePicture.jpg" alt="Ashutosh Yadav" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <span class="overline">01. Who I Am</span>
+            <h2 class="reveal">About Me</h2>
+            <div class="about-grid reveal">
+                <div class="about-text">
+                    <p>
+                        I am a Software Engineer pursuing an MSc in Computer Science at <strong>University College Dublin</strong>. My expertise lies in architecting high-performance backend systems while maintaining a deep understanding of quantitative finance.
+                    </p>
+                    <p>
+                        With industry experience delivering enterprise SaaS solutions for clients like Sony and Universal Studios, I combine strong engineering rigor with analytical precision. I specialize in building <strong>scalable microservices</strong>, optimizing distributed architectures, and applying <strong>econometric models</strong> (ARIMA, GARCH) to solve complex data challenges.
+                    </p>
+                    
+                    <div class="about-socials">
+                        <a href="https://www.linkedin.com/in/ashutosh-yadav-057181194/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Kronos279" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="skills-container card-style">
+                    <h3><i class="fas fa-code" style="color:var(--accent-gold); margin-right:10px;"></i> Tech Stack</h3>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <span class="overline" style="color: var(--text-muted); font-size: 0.7rem;">Engineering & Systems</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java (Spring Boot)</span>
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">RabbitMQ</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS/Azure</span>
+                            <span class="skill-tag">SQL & MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div style="margin: 1.5rem 0;">
+                        <span class="overline" style="color: var(--text-muted); font-size: 0.7rem;">Quant & Analytics</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Pandas & NumPy</span>
+                            <span class="skill-tag">Statsmodels (ARIMA/GARCH)</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Backtesting</span>
+                            <span class="skill-tag">Vector Embeddings (FAISS)</span>
+                        </div>
+                    </div>
+
+                    <div style="margin: 1.5rem 0;">
+                        <span class="overline" style="color: var(--text-muted); font-size: 0.7rem;">Frontend & Web</span>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">Node.js</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section-padding">
+        <div class="container">
+            <span class="overline">02. Career Path</span>
+            <h2 class="reveal">Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item reveal">
+                    <div class="logo-container">
+                        <img src="assets/images/capgeminiLogo.png" alt="Capgemini Logo" class="theme-logo">
+                    </div>
+
+                    <div class="job-role">Software Engineer</div>
+                    <div class="job-company">Capgemini Technology Services</div>
+                    <span class="job-date">Mar 2024 – Aug 2025</span>
+                    <ul class="job-details">
+                        <li>Developed settlement & billing workflows using Java Spring Boot for a SaaS platform serving Sony & Universal Studios.</li>
+                        <li>Built and optimized microservices, reducing manual settlement approval time by 40%.</li>
+                        <li>Delivered 4 production-grade application screens in Agile teams with bi-weekly releases.</li>
+                        <li>Mentored new hires in Core Java and development best practices.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="logo-container" style="width: 100px; height: 50px;">
+                        <img src="assets/images/MorningstarLogo.png" alt="Morningstar Logo" class="theme-logo">
+                    </div>
+                         
+                    <div class="job-role">Data Analyst Associate</div>
+                    <div class="job-company">Morningstar, Inc.</div>
+                    <span class="job-date">Oct 2023 – Feb 2024</span>
+                    <ul class="job-details">
+                        <li>Orchestrated management of private equity data, improving workflow efficiency by 30%.</li>
+                        <li>Quantified market research contributing to a 15% increase in client retention.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="logo-container" style="width: 120px; height: 90px;">
+                        <img src="assets/images/sahutechnologiesLogo.png" alt="Sahu Technologies Logo" class="theme-logo">
+                    </div>
+
+                    <div class="job-role">Web Development Intern</div>
+                    <div class="job-company">Sahu Technologies</div>
+                    <span class="job-date">Jun 2022 – Jul 2022</span>
+                    <ul class="job-details">
+                        <li>Architected and launched a dynamic SPA front-end using AngularJS.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <span class="overline">03. Portfolio</span>
+            <h2 class="reveal">Projects and Research</h2>
+            <div class="projects-grid">
+                
+                 <article class="project-card card-style reveal" 
+                         onclick="openGallery(this)"
+                         style="cursor: pointer;"
+                         data-folder="SnapSearch" 
+                         data-count="8"
+                         data-extension="png">
+                    <div class="project-preview">
+                        <img src="assets/projects/SnapSearch/img1.png" alt="SnapSearch">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <h3>SnapSearch</h3>
+                            <div class="project-icons">
+                                <a href="https://github.com/Kronos279/SnapSearch" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Scalable image search platform enabling semantic queries. Uses BLIP for descriptive captioning and FAISS for high-speed similarity search.
+                        </p>
+                        <p class="project-tech">PYTHON PYTORCH FAISS</p>
+                    </div>
+                </article>
+
+                <article class="project-card card-style reveal" 
+                         onclick="window.open('https\://github.com/Kronos279/Econometric-Analysis-of-Inflation-Dynamics-Malaysia/blob/main/report/Analysis_Report.pdf', '_blank')"
+                         style="cursor: pointer;">
+                    <div class="project-preview">
+                        <img src="assets/projects/InflationDynamics/img1.png" alt="Inflation Dynamics">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <h3>Inflation Dynamics</h3>
+                            <div class="project-icons">
+                                <a href="#" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Econometric analysis of inflation volatility (1990-2006). Backtested GARCH(1,1) models to identify structural breaks and quantify policy shock impacts.
+                        </p>
+                        <p class="project-tech">PYTHON STATSMODELS ARIMA</p>
+                    </div>
+                </article>
+
+                <article class="project-card card-style reveal" 
+                         onclick="openGallery(this)"
+                         style="cursor: pointer;"
+                         data-folder="aetherwings" 
+                         data-count="11"
+                         data-extension="webp">
+                    <div class="project-preview">
+                        <img src="assets/projects/aetherwings/img1.webp" alt="AetherWings">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <h3>AetherWings</h3>
+                            <div class="project-icons">
+                                <a href="https://github.com/Kronos279/FlightManagementSystem" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Microservices flight scheduling system. Implemented RabbitMQ for async comms (reducing latency by 25%) and JWT for security.
+                        </p>
+                        <p class="project-tech">JAVA SPRING MICROSERVICES</p>
+                    </div>
+                </article>
+
+                <article class="project-card card-style reveal" 
+                         onclick="openGallery(this)"
+                         style="cursor: pointer;"
+                         data-folder="soundsphere" 
+                         data-count="6"
+                         data-extension="webp">
+                    <div class="project-preview">
+                        <img src="assets/projects/SoundSphere/img1.webp" alt="SoundSphere">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <h3>SoundSphere</h3>
+                            <div class="project-icons">
+                                <a href="https://github.com/Kronos279/SoundSphere" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Full-stack music streaming platform with dynamic playlist management. Features RESTful APIs and a responsive React UI.
+                        </p>
+                        <p class="project-tech">NODE REACT MONGODB PYTHON</p>
+                    </div>
+                </article>
+
+                <article class="project-card card-style reveal" 
+                         onclick="openGallery(this)"
+                         style="cursor: pointer;"
+                         data-folder="skillhub" 
+                         data-count="10"
+                         data-extension="webp">
+                    <div class="project-preview">
+                        <img src="assets/projects/SkillHub/img1.webp" alt="SkillHub">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <h3>SkillHub</h3>
+                            <div class="project-icons">
+                                <a href="https://github.com/Kronos279/Training-Management" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            LMS integrated with an AI-based chatbot powered by Google Gemini embeddings to provide real-time training assistance.
+                        </p>
+                        <p class="project-tech">JAVA ANGULAR AI/ML</p>
+                    </div>
+                </article>
+
+                <article class="project-card card-style reveal" 
+                         onclick="openGallery(this)"
+                         style="cursor: pointer;"
+                         data-folder="predire" 
+                         data-count="12"
+                         data-extension="jpg">
+                    <div class="project-preview">
+                        <img src="assets/projects/Predire/img1.jpg" alt="Predire">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <h3>Predire</h3>
+                            
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Disease prediction system utilizing Random Forest algorithms to accurately analyze symptoms and predict potential health conditions.
+                        </p>
+                        <p class="project-tech">PYTHON SKLEARN ML</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section-padding">
+        <div class="container">
+            <span class="overline">04. Academic</span>
+            <h2 class="reveal">Education</h2>
+            <div class="edu-grid reveal">
+                <div class="card-style" style="display:flex; flex-direction:column;">
+                    <div class="logo-container" style="width: 100px; height: 100px; filter: brightness(140%);">
+                        <img src="assets/images/UCD_logo.png" alt="UCD Logo" class="theme-logo">
+                    </div>
+
+                    <h3 style="margin-bottom:0.5rem; color:var(--text-main);">MSc Computer Science</h3>
+                    <div class="edu-school">University College Dublin</div>
+                    <span class="edu-date">Sept 2025 - Jul 2026</span>
+                </div>
+                <div class="card-style" style="display:flex; flex-direction:column;">
+                    <div class="logo-container" style="width: 100px; height: 95px;">
+                        <img src="assets/images/TCET.png" alt="Thakur College Logo" class="theme-logo">
+                    </div>
+                    
+                    <h3 style="margin-bottom:0.5rem; color:var(--text-main);">B.Eng Info Tech</h3>
+                    <div class="edu-school">Thakur College of Engineering</div>
+                    <p style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">CGPA: 8.34</p>
+                    <span class="edu-date">May 2019 - Jun 2023</span>
+                </div>
+            </div>
+
+            <div class="reveal" style="margin-top: 4rem; text-align: center;">
+                <h3 style="margin-bottom: 2rem; color: var(--text-muted);">Certifications</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://learn.microsoft.com/en-gb/users/ashutoshyadav-8379/credentials/e0eb8c602a9d7fc6?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" class="skill-tag" style="padding: 10px 20px; text-decoration: none; cursor: pointer;">
+                        <i class="fab fa-microsoft"></i> Azure (AZ-900)
+                    </a>
+                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_a6hFwccQPcXQp3t7W_1657775626226_completion_certificate.pdf"
+                          target="_blank" class="skill-tag" style="padding: 10px 20px; text-decoration: none; cursor: pointer;">
+                            <i class="fa-solid fa-greater-than"></i> Accenture Data Analytics
+                    </a>
+
+                    <a target="_blank" class="skill-tag" style="padding: 10px 20px; text-decoration: none; cursor: pointer;">
+                        <i class="fab fa-java"></i> Java Masterclass
+                    </a>
+
+                    <a href="https://www.coursera.org/account/accomplishments/verify/9SXRKLGPFJVK" target="_blank" class="skill-tag" style="padding: 10px 20px; text-decoration: none; cursor: pointer;">
+                        <i class="fas fa-database"></i> SQL
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="section-padding">
+        <div class="container">
+            <span class="overline">05. Research</span>
+            <h2 class="reveal">Publications</h2>
+            <div class="card-style reveal">
+                <h3 style="font-size: 1.5rem; color: var(--text-main);">“Disease Prediction System”</h3>
+                <p style="margin-top: 1rem; color: var(--text-muted); font-size:1rem;">
+                    Published in International Journal of Innovative Research in Technology (IJIRT) at the Multicon W Conference.
+                </p>
+                <a href="#" style="display: inline-block; margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-gold);">
+                    Read Paper <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container contact-content reveal">
+            <span class="overline">06. What's Next?</span>
+            <h2 style="margin-bottom: 1.5rem;">Get In Touch</h2>
+            <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Currently looking for new opportunities in Quantitative Development or Software Engineering.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ashutoshy115@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+353 899447863</span>
+                </div>
+            </div>
+
+            <a href="mailto:ashutoshy115@gmail.com" class="btn">Say Hello</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div style="margin-bottom: 1rem;">
+                <a href="#" style="color:#777; margin:0 10px; font-size:1.2rem;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color:#777; margin:0 10px; font-size:1.2rem;"><i class="fab fa-github"></i></a>
+            </div>
+            <p>
+                Built by Ashutosh Yadav.
+            </p>
+        </div>
+    </footer>
+
+    <div id="galleryModal" class="gallery-modal">
+        <span class="gallery-close" onclick="closeGallery()">&times;</span>
+        <div class="gallery-content-wrapper">
+            <a class="gallery-prev" onclick="changeImage(-1)">&#10094;</a>
+            <img class="gallery-main-img" id="galleryMainImg" src="">
+            <a class="gallery-next" onclick="changeImage(1)">&#10095;</a>
+        </div>
+        <div class="gallery-thumbnails" id="galleryThumbnails">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
