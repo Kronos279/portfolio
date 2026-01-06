@@ -115,7 +115,7 @@ ul { list-style: none; }
 
 .btn-outline:hover {
     border-color: var(--accent-gold);
-    color: var(--accent-gold);
+    color: #000;
 }
 
 /* --- Glassmorphism Nav --- */
