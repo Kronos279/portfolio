@@ -83,7 +83,14 @@ ul { list-style: none; }
     padding: 0 25px;
 }
 
-.section-padding { padding: 100px 0; }
+.section-padding { 
+    padding: 100px 0; 
+    position: relative;
+}
+
+section:nth-child(even) {
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+}
 
 /* --- Buttons --- */
 .btn {
@@ -235,15 +242,26 @@ nav {
     font-weight: 300;
 }
 
+.hero-btns {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
 .typewriter {
     font-family: var(--font-mono);
     color: var(--accent-gold);
     font-size: 1rem;
     margin-bottom: 1rem;
     display: inline-block;
-    background: rgba(212, 175, 55, 0.1);
-    padding: 4px 12px;
-    border-radius: 4px; 
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    letter-spacing: 2px;
+    font-weight: 500;
 }
 
 /* Circular Profile */
@@ -363,18 +381,18 @@ nav {
     align-items: center;
     width: 45px;
     height: 45px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1.5px solid rgba(212, 175, 55, 0.4);
     border-radius: 50%;
     color: var(--text-muted);
     transition: var(--transition);
-    background: rgba(255, 255, 255, 0.03);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.02));
 }
 
 .about-socials a:hover {
     border-color: var(--accent-gold);
     color: var(--accent-gold);
-    box-shadow: 0 0 15px var(--accent-gold-glow);
-    transform: translateY(-3px);
+    box-shadow: 0 0 20px var(--accent-gold-glow), inset 0 0 10px rgba(212, 175, 55, 0.1);
+    transform: translateY(-5px) scale(1.1);
 }
 
 .about-socials i { font-size: 1.2rem; }
@@ -413,22 +431,34 @@ nav {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    border-left: 2px solid rgba(255,255,255,0.1);
     padding-left: 40px;
 }
 
-.timeline-item { margin-bottom: 3.5rem; position: relative; }
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 19px;
+    width: 2px;
+    height: calc(100% - 19px);
+    background: rgba(212, 175, 55, 0.2);
+    transition: var(--transition);
+}
+
+.timeline-item { margin-bottom: 3.5rem; position: relative; transition: var(--transition); }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -46px; 
-    top: 5px;
-    width: 10px; height: 10px;
+    left: -49px; 
+    top: 20px;
+    width: 12px; 
+    height: 12px;
     background: var(--bg-main);
-    border: 2px solid var(--accent-gold);
-    box-shadow: 0 0 10px var(--accent-gold);
+    border: 2.5px solid var(--accent-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6), inset 0 0 5px rgba(212, 175, 55, 0.2);
     border-radius: 50%;
+    transition: var(--transition);
 }
 
 .job-role {
@@ -479,6 +509,27 @@ nav {
     display: flex;
     flex-direction: column;
     height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-card:hover::after {
+    opacity: 1;
 }
 
 .project-preview {
@@ -624,11 +675,35 @@ nav {
 }
 
 .contact-item {
-    display: flex; align-items: center; gap: 1rem;
+    display: flex; 
+    align-items: center; 
+    gap: 1rem;
     font-family: var(--font-mono);
+    padding: 12px 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 6px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.02));
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    border-color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.12);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 .contact-item i { color: var(--accent-gold); }
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-content h2 {
+    background: linear-gradient(135deg, var(--text-main), var(--accent-gold)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin-bottom: 1.5rem;
+}
 
 /* --- Footer --- */
 footer {
