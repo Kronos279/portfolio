@@ -17,7 +17,7 @@ function closeMenu() { navLinks.classList.remove('active'); }
 
 // --- 3. Typewriter Effect ---
 const textElement = document.getElementById('typewriter-text');
-const roles = ["Software Engineer", "Financial Analyst", "MSc Computer Science Student"];
+const roles = ["Full Stack Developer", "Software Engineer", "Backend Architect", "Frontend Specialist"];
 let roleIndex = 0, charIndex = 0, isDeleting = false;
 
 function type() {

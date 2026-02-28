@@ -89,33 +89,54 @@ ul { list-style: none; }
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background: rgba(31, 54, 35, 0.3); /* Low opacity emerald */
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
     color: var(--accent-gold);
     font-family: var(--font-mono);
     font-size: 0.85rem;
-    border: 1px solid var(--accent-gold);
+    border: 1.5px solid var(--accent-gold);
     cursor: pointer;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover {
-    background: var(--accent-gold);
+    background: linear-gradient(135deg, var(--accent-gold), rgba(212, 175, 55, 0.8));
     color: #000;
-    box-shadow: 0 0 15px var(--accent-gold-glow);
+    box-shadow: 0 0 25px var(--accent-gold-glow), inset 0 0 15px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
 }
 
 .btn-outline {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(212, 175, 55, 0.5);
     color: var(--text-main);
     margin-left: 15px;
 }
 
 .btn-outline:hover {
     border-color: var(--accent-gold);
-    color: #000;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 /* --- Glassmorphism Nav --- */
@@ -184,7 +205,10 @@ nav {
     align-items: center;
     justify-content: center;
     padding-top: 80px;
-    background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(31, 54, 35, 0.1) 0%, transparent 50%);
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-grid {
@@ -246,6 +270,7 @@ nav {
     width: 350px;
     height: 350px;
     object-fit: cover;
+    object-position: center 35%;
     border-radius: 50%;
     border: 2px solid var(--accent-gold);
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.15); 
@@ -262,18 +287,37 @@ nav {
 
 /* --- Cards --- */
 .card-style {
-    background: var(--bg-card);
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.4), rgba(30, 30, 30, 0.6));
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
     padding: 2rem;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-style::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
 }
 
 .card-style:hover {
-    border-color: var(--accent-gold);
-    transform: translateY(-5px);
-    background: rgba(40, 40, 40, 0.6);
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, rgba(50, 50, 50, 0.6), rgba(40, 40, 40, 0.7));
+    box-shadow: 0 15px 40px -10px rgba(212, 175, 55, 0.2), 0 0 20px -5px rgba(0,0,0,0.8);
+}
+
+.card-style:hover::before {
+    opacity: 1;
 }
 
 /* --- About Section & Socials --- */
@@ -289,17 +333,21 @@ nav {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--text-main);
-    padding: 5px 12px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.03);
+    padding: 7px 14px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.01));
     cursor: default;
     transition: var(--transition);
+    border-radius: 4px;
+    font-weight: 500;
 }
 
 .skill-tag:hover {
     border-color: var(--accent-gold);
     color: var(--accent-gold);
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(212, 175, 55, 0.15);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2), inset 0 0 10px rgba(212, 175, 55, 0.05);
+    transform: translateY(-1px);
 }
 
 .about-socials {
@@ -443,13 +491,13 @@ nav {
 .project-preview img {
     width: 100%; height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
-    filter: grayscale(100%);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.6s;
+    filter: grayscale(100%) brightness(0.95);
 }
 
 .project-card:hover .project-preview img {
-    transform: scale(1.05);
-    filter: grayscale(0%);
+    transform: scale(1.08) rotate(1deg);
+    filter: grayscale(20%) brightness(1.2) contrast(1.1);
 }
 
 .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
@@ -595,8 +643,8 @@ footer {
 /* --- Animations --- */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .reveal.active {
@@ -611,7 +659,7 @@ footer {
     .hero-content h1 { font-size: 3rem; }
     .about-grid { grid-template-columns: 1fr; }
     
-    .profile-img { width: 280px; height: 280px; }
+    .profile-img { width: 300px; height: 300px; }
     .hero-image-wrapper::before { width: 300px; height: 300px; }
 }
 
